@@ -1,0 +1,71 @@
+/* Cyber Dashboard v2 Override */
+:root{
+ --bg:#051321;
+ --panel:#0A1E35;
+ --panel2:#102947;
+ --border:#1f5ea8;
+ --primary:#2196F3;
+ --accent:#5BC0FF;
+ --text:#fff;
+}
+body{
+ background:
+ radial-gradient(circle at top right,rgba(33,150,243,.18),transparent 30%),
+ radial-gradient(circle at bottom left,rgba(91,192,255,.12),transparent 35%),
+ var(--bg);
+ color:var(--text);
+}
+.shell{max-width:1400px}
+.hero,.profile-header,.card,.case-card,.termbar{
+ background:rgba(10,30,53,.72);
+ backdrop-filter:blur(14px);
+ border:1px solid rgba(91,192,255,.25);
+ box-shadow:0 10px 40px rgba(0,120,255,.15);
+ border-radius:18px;
+}
+.hero{
+ background:linear-gradient(135deg,#0a1e35,#123c69);
+ overflow:hidden;
+}
+.hero:before{
+ content:"";
+ position:absolute;inset:-20%;
+ background:radial-gradient(circle,rgba(91,192,255,.15),transparent 60%);
+ animation:floatGlow 8s linear infinite;
+}
+@keyframes floatGlow{
+50%{transform:translate(40px,20px) scale(1.1)}
+100%{transform:translate(0,0)}
+}
+.card,.case-card{
+ transition:.35s;
+}
+.card:hover,.case-card:hover{
+ transform:translateY(-10px) scale(1.02);
+ border-color:var(--accent);
+ box-shadow:0 20px 50px rgba(0,153,255,.35);
+}
+.card img,.case-card img{
+ transition:.5s;
+ filter:none!important;
+}
+.card:hover img,.case-card:hover img{
+ transform:scale(1.08);
+}
+.section-label{
+ color:var(--accent);
+}
+.section-label:after{
+ background:linear-gradient(90deg,var(--accent),transparent);
+}
+.specialty,.stat-chip,.back-link{
+ border-radius:999px;
+ border-color:rgba(91,192,255,.4);
+ background:rgba(33,150,243,.08);
+}
+.footnote{
+ border-color:rgba(91,192,255,.2);
+}
+.grid,.gallery{
+ gap:24px;
+}
